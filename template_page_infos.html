@@ -4,53 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Titre template</title>
-    <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      body {
-        font-family: Inter, system-ui, sans-serif;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #a8ddcd, #a8ddcd);
-        color: #9f0064;
-      }
-      .card {
-        background: rgba(255, 255, 255, 0.45);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 16px;
-        padding: 40px 32px;
-        width: min(600px, 90vw);
-        text-align: center;
-        backdrop-filter: blur(8px);
-      }
-      h1 { font-size: 1.4rem; margin-bottom: 8px; }
-      p.sub { color: #3d3d3d; font-size: 0.9rem; margin-bottom: 28px; }
-      button {
-        width: 100%;
-        padding: 14px;
-        font-size: 1rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 10px;
-        background: #9f0064;
-        color: #f8fcfa;
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-      button:hover { background: #df0448; }
-      header.brand {
-        position: absolute; top: 20px; left: 20px;
-        display: flex; align-items: center; gap: 10px;
-        font-weight: 600; font-size: 0.9rem; opacity: 0.85; color: #ede88e;
-      }
-      header.brand svg { width: 36px; height: 36px; }
-      footer.copyright {
-        position: absolute; bottom: 14px; left: 0; width: 100%;
-        text-align: center; font-size: 0.75rem; opacity: 0.5; 
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
+  
   <body>
     <header class="brand">
       <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -59,6 +15,10 @@
       </svg>
       <span>Antibio Quest</span>
     </header>
+
+    <!-- ===== Barre de progression ===== -->
+    <nav class="progression" id="progression" aria-label="Étapes"></nav>
+
     <main class="card">
       <h1>TITRE</h1> <!-- template -->
       <p class="sub">Informations sur l'étape. <br> 
@@ -71,9 +31,18 @@
       </p> <!-- template -->
       <div class="inputs" id="inputs"></div>
       <div class="msg" id="msg"></div>
-      <a href="template_page_code.html" style="text-decoration:none"><button id="btn">
-        Cliquez ici et rendez-vous au labo... Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button></a> <!-- template -->
+      <div class="buttons">
+        <a href="index.html" style="text-decoration:none"><button class="arriere" id="btn-arriere">← Retourner</button></a>
+        <a href="template_page_code.html" style="text-decoration:none"><button class="avant" id="btn-avant">Continuer →</button></a> <!-- template -->
+      </div>
     </main>
     <footer class="copyright">© 2026 EPFL - Service de Promotion des Sciences</footer>
+
+<!-- ===== SCRIPTS - template ===== -->
+    <script>
+      var ETAPE_ACTUELLE = 4 ;           // ← 1 à N : etape sur barre de progression
+    </script>
+    <script src="script_barre-progression.js"></script>
+
   </body>
 </html>
